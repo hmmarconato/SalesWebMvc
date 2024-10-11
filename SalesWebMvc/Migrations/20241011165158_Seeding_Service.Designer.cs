@@ -12,8 +12,8 @@ using SalesWebMvc.Data;
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20241009145603_teste")]
-    partial class teste
+    [Migration("20241011165158_Seeding_Service")]
+    partial class Seeding_Service
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,8 +53,8 @@ namespace SalesWebMvc.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("double precision");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
 
                     b.Property<int>("SellerId")
                         .HasColumnType("integer");
@@ -80,8 +80,8 @@ namespace SalesWebMvc.Migrations
                     b.Property<double>("BaseSalary")
                         .HasColumnType("double precision");
 
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("BirthDate")
+                        .HasColumnType("date");
 
                     b.Property<int>("DepartmentId")
                         .HasColumnType("integer");
