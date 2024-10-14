@@ -1,11 +1,13 @@
-﻿
-
-using SalesWebMvc.Models.Enum;
+﻿using SalesWebMvc.Models.Enum;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalesWebMvc.Models
 {
     public class SalesRecord
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateOnly Date { get; set; }
         public double Amount { get; set; }

@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Data;
-using System.Configuration;
+using SalesWebMvc.Services;
 
 namespace SalesWebMvc
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -21,6 +20,8 @@ namespace SalesWebMvc
             // Add services to the container.
             services.AddControllersWithViews();
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
 
 
         }
