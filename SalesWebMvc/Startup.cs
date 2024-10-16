@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 using SalesWebMvc.Data;
 using SalesWebMvc.Services;
 
@@ -28,6 +30,16 @@ namespace SalesWebMvc
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
+            
+            var enUS = new CultureInfo("en-US");
+            var localizationOpttions = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(enUS),
+                SupportedCultures = new List<CultureInfo> { enUS },
+                SupportedUICultures = new List<CultureInfo> { enUS },
+            };
+            
+            
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
