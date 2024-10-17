@@ -13,32 +13,32 @@
         <div asp-validation-summary="All" class="text-danger"></div>
         <form asp-action="Edit">
             <input type="hidden" asp-for="Seller.Id" />
-            <div class="mb-4">
+            <div class="mb-6">
                 <label asp-for="Seller.Name" class="form-label"></label>
                 <input type="text" asp-for="Seller.Name" class="form-control" />
                 <span asp-validation-for="Seller.Name" class="text-danger"></span>
             </div>
-            <div class="mb-4">
+            <div class="mb-6">
                 <label asp-for="Seller.Email" class="form-label"></label>
                 <input type="email" asp-for="Seller.Email" class="form-control" />
                 <span asp-validation-for="Seller.Email" class="text-danger"></span>
             </div>
-            <div class="mb-4">
+            <div class="mb-6">
                 <label asp-for="Seller.BirthDate" class="form-label"></label>
                 <input type="date" asp-for="Seller.BirthDate" class="form-control" />
                 <span asp-validation-for="Seller.BirthDate" class="text-danger"></span>
             </div>
-            <div class="mb-4">
+            <div class="mb-6">
                 <label asp-for="Seller.BaseSalary" class="form-label"></label>
                 <input type="number" asp-for="Seller.BaseSalary" class="form-control" />
                 <span asp-validation-for="Seller.BaseSalary" class="text-danger"></span>
             </div>
-            <div class="mb-4">
+            <div class="mb-6">
                 <label asp-for="Seller.DepartmentId" class="form-label"></label>
                 <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments,"Id","Name"))" class="form-control">
                 </select>
             </div>
-            <div class="mb-4">
+            <div class="mb-6">
                 <input type="hidden" asp-for="Seller.Id" />
                 <input type="submit" value="Save" class="btn btn-warning" />
                 <a asp-action="Index">Back to List</a>

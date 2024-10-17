@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 using SalesWebMvc.Data;
@@ -16,6 +17,9 @@ namespace SalesWebMvc
 
         public void ConfigureServices(IServiceCollection services, WebApplicationBuilder builder)
         {
+            builder.Services.AddControllers(
+                options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+
             services.AddDbContext<SalesWebMvcContext>(options =>
      options.UseNpgsql(builder.Configuration.GetConnectionString("SalesWebMvcContext") ?? throw new InvalidOperationException("Connection string 'SalesWebMvcContext' not found.")));
 
@@ -24,6 +28,7 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
             services.AddScoped<DepartmentService>();
+
 
 
         }
@@ -38,8 +43,8 @@ namespace SalesWebMvc
                 SupportedCultures = new List<CultureInfo> { enUS },
                 SupportedUICultures = new List<CultureInfo> { enUS },
             };
-            
-            
+
+
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
