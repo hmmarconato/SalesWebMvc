@@ -10,6 +10,7 @@ namespace SalesWebMvc.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateOnly Date { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C2}")]
         public double Amount { get; set; }
         public SaleStatus Status { get; set; }
         public Seller Seller { get; set; }
