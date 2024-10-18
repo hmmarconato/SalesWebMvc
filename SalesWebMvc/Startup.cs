@@ -28,9 +28,7 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
             services.AddScoped<DepartmentService>();
-
-
-
+            services.AddScoped<SalesRecordsServices>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
